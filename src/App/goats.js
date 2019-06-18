@@ -43,7 +43,7 @@ const goats = [
     id: 'goat5',
     name: 'baphomet',
     disposition: 'satanic',
-    imageUrl: 'https://pbs.twimg.com/profile_images/666921221410439168/iriHah4f_400x400.jpg',
+    imageUrl: 'https://news.artnet.com/app/news-upload/2018/10/Baphomet-256x256.jpg',
     fullness: 500,
     favPose: 'cobra',
     isFainting: true,
