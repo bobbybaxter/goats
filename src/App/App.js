@@ -1,27 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <button className="btn btn-danger">help</button>
-      </header>
-    </div>
-  );
+import goats from './goats';
+
+class App extends React.Component {
+  // axios calls to get data - anything that modifies state
+  // this is technically inside the constructor
+  hello = () => 'hi'; // needs a this.hello because this is called in the constructor
+
+  state = {
+    goats: [],
+  }
+
+  componentDidMount() {
+    // where we usually do the axios call
+    this.setState({ goats });
+  }
+
+  render() {
+    // javascripty things, like looping through buttons to add eventListeners
+    const hello2 = () => 'hi again';
+
+    return (
+      // where we write jsx
+      <div className="App">
+        {console.error(this.hello())}
+        {console.error(hello2())}
+        <div>Goat Yoga</div>
+        {/* <GoatCorral goats={goats}/> */}
+      </div>
+    );
+  }
 }
 
 export default App;
