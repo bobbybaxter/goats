@@ -2,7 +2,8 @@ import React from 'react';
 
 import './App.scss';
 
-import goats from './goats';
+import myGoats from './goats';
+import GoatCorral from '../components/GoatCorral/GoatCorral';
 
 class App extends React.Component {
   // axios calls to get data - anything that modifies state
@@ -15,12 +16,14 @@ class App extends React.Component {
 
   componentDidMount() {
     // where we usually do the axios call
-    this.setState({ goats });
+    this.setState({ goats: myGoats });
   }
 
   render() {
     // javascripty things, like looping through buttons to add eventListeners
     const hello2 = () => 'hi again';
+
+    const { goats } = this.state; // object destructuring: same as const goats = this.state.goats;
 
     return (
       // where we write jsx
@@ -28,7 +31,7 @@ class App extends React.Component {
         {console.error(this.hello())}
         {console.error(hello2())}
         <div>Goat Yoga</div>
-        {/* <GoatCorral goats={goats}/> */}
+        <GoatCorral goats={goats}/>
       </div>
     );
   }
